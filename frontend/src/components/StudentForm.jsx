@@ -137,7 +137,7 @@ export const StudentForm = ({
         </div>
         <div className="fields">
           <Field field="name" error={shown.name} span={4} label="Full name">
-            <input {...bind('name')} autoComplete="off" placeholder="Sammy Paudyal" />
+            <input {...bind('name')} autoComplete="off" placeholder="Sammy Jackson" />
           </Field>
           <Field field="rollNumber" error={shown.rollNumber} span={3} label="Roll number" hint="College format: SC-2026-001">
             <input {...bind('rollNumber')} autoComplete="off" placeholder="SC-2026-001" />

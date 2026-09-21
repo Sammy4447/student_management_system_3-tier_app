@@ -67,13 +67,29 @@ npm run dev      # http://localhost:5173
 
 Vite proxies `/api` to `http://localhost:5000`, so no CORS setup is needed in development.
 
+For the full explanation of each part — every environment variable, the API
+reference, PM2, the production build — see
+**[BACKEND_SETUP.md](BACKEND_SETUP.md)** and
+**[FRONTEND_SETUP.md](FRONTEND_SETUP.md)**.
+
+## Documentation
+
+| File | What it covers |
+|---|---|
+| [SETUP.md](SETUP.md) | Deploying everything to one EC2 instance (Amazon Linux 2023) — the server, nginx, verification, troubleshooting |
+| [BACKEND_SETUP.md](BACKEND_SETUP.md) | The Express API and MongoDB — install, `.env`, seeding, PM2, API reference |
+| [FRONTEND_SETUP.md](FRONTEND_SETUP.md) | The React app — install, `.env`, dev server, production build, deploying the build |
+
+Both setup files work for local development and for the server, so
+[SETUP.md](SETUP.md) links out to them rather than repeating the steps.
+
 ## Deployment
 
 To host the whole stack — MongoDB, the Express API and the React build — on a
-single EC2 instance behind nginx, follow **[SETUP.md](SETUP.md)**. It covers
-pushing to GitHub, launching the instance, installing the dependencies,
-creating the `.env` files, keeping the API alive with PM2, the nginx config,
-and deploying updates afterwards.
+single EC2 instance behind nginx, start with **[SETUP.md](SETUP.md)**. It
+covers launching the instance, installing git, Node, MongoDB and nginx, cloning
+the project, the nginx configuration, and deploying updates — handing off to
+the two setup files above for the application itself.
 
 It deploys over plain HTTP with no login system, which is fine for a teaching
 demo and not fine for real student data — the guide says so explicitly at the
